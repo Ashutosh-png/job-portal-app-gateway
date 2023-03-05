@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: TCS-SERVICE
+  cloud:
+    gateway:
+      routes:
+      - id: tcs-form
+        uri: lb://TCS-FORM
+        predicates:
+        - Path=/**
+
+
+
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true   
+    serviceUrl: 
+     defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    
+    
+server:
+  port: 8222
